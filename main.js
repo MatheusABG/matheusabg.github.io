@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   const imagem = document.getElementById("imagem");
-  const areaClicavel = { x: 0, y: 0, largura: 50, altura: 12 };
+  const areaClicavel = { x: 0, y: 0, width: 50, height: 12 };
 
   imagem.addEventListener("click", (event) => {
     const rect = imagem.getBoundingClientRect();
@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     if (
       x >= areaClicavel.x &&
-      x <= areaClicavel.x + areaClicavel.largura &&
+      x <= areaClicavel.x + areaClicavel.width &&
       y >= areaClicavel.y &&
-      y <= areaClicavel.y + areaClicavel.altura
+      y <= areaClicavel.y + areaClicavel.height
     ) {
       trocarImagem();
     }
