@@ -1,3 +1,26 @@
+document.addEventListener("DOMContentLoaded", (event) => {
+  const imagem = document.getElementById("imagem");
+  const areaClicavel = { x: 0, y: 0, largura: 50, altura: 12 };
+
+  imagem.addEventListener("click", (event) => {
+    const rect = imagem.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    if (
+      x >= areaClicavel.x &&
+      x <= areaClicavel.x + areaClicavel.largura &&
+      y >= areaClicavel.y &&
+      y <= areaClicavel.y + areaClicavel.altura
+    ) {
+      trocarImagem();
+    }
+  });
+
+  function trocarImagem() {
+    imagem.src = "caiaocareca.png";
+  }
+});
 var gameData = {
   mmr: 0,
   mmrPerClick: 1,
